@@ -1,0 +1,12 @@
+02/07/2025 Autocompile 0.1 - WIP
+ - Project started
+
+02/13/2025 Autocompile 0.1
+ - Created checks.py
+    - osTypeCheck tested
+    - pathVarCheck tested. However, there may be an issue if using some exotic
+      operating system. However Window, Linux, UNIX, and Mac should all work.
+    - compilerCheck tested.
+
+02/14/2025 Autocompile 0.1
+ - Issue: Can't get output to a log file

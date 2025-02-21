@@ -1,8 +1,6 @@
 '''
 AutoCompile 0.1
-Author: LittleFox2024 (I am not giving the name here for security reasons.
-        This is a public repository, after all. The final submitted version will have
-        my name on it.
+Author: Braden DeForest
 Creation Date: 02/07/2025
 Project: Final Project
 
@@ -12,51 +10,9 @@ command line without the user ever having to interact with the command line.
 Changelog available in "changelog.txt"
 '''
 
-#Imports
-import os
-import checks
+from classes.mainWindow import mainWindow
 
-#Variables
-compilationFile = "" #File to compile
-compiler = "" #Compiler to use
-switches = [] #Command line switches (such as -x, /x, etc...)
-
-
-#Functions
-def openWindow():
-
-    '''
-    Create the main window
-    '''
-    return 0
-
-def doCompilation(compiler, compilationFile, switches):
-    '''
-    This is in charge of the actual compilation.
-    '''
-    
-    x = checks.compilerCheck(compiler)
-    
-    #Make sure the compiler exists...
-    if x == 1:
-        return "Compiler not found or unavailable."
-    elif (x != 0 and x != 1):
-        return "Unexpected error. Please try a different compiler."
-    
-
-    switchList = ""
-    
-    #Make sure switches are in place
-    for switch in switches:
-        switchList += switch
-        switchList += " "
-    #Finally, we can execute it!
-    cmdLine = compiler + " " + switchList + " " + compilationFile
-
-    hostOS = checks.osTypeCheck()
-    if hostOS == "Windows": os.system(cmdLine + \
-                                      " 2> %HOMEPATH%\\AutoCompileLog.txt")
-    elif hostOS == "Linux" or hostOS == "Darwin": os.system("bash " + cmdLine + \
-                                                    " 2> ~/AutoCompileLog.txt")
-
-    return "Completed"
+try:
+    mainWindow.window.mainloop()
+except:
+    print("Code 871")

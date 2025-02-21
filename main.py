@@ -1,6 +1,8 @@
 '''
 AutoCompile 0.1
-Author: Braden DeForest
+Author: LittleFox2024 (I am not giving the name here for security reasons.
+        This is a public repository, after all. The final submitted version will have
+        my name on it.
 Creation Date: 02/07/2025
 Project: Final Project
 

@@ -1,6 +1,6 @@
 '''
 AutoCompile 0.1
-Author: Braden DeForest
+Author: LittleFox2024
 Creation Date: 02/07/2025
 Project: Final Project
 
@@ -15,4 +15,9 @@ from classes.mainWindow import mainWindow
 try:
     mainWindow.window.mainloop()
 except:
-    print("Code 871")
+    try:
+        import classes.errorWindow
+        classes.errorWindow.error.mainloop()
+    finally:
+        print("System Alert: Code 871")
+        exit(871)

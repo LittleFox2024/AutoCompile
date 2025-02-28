@@ -7,9 +7,11 @@ import tkinter.ttk as tk
 import classes.compilation as compilation
 import classes.checks as checks
 import classes.mainWindow
+import classes.mainWindow
 
 class mainWindow():
     '''For main window'''
+    #from PIL import ImageTk, Image
 
     #Set up Window
     window = Tk()
@@ -39,7 +41,9 @@ class mainWindow():
         '''Start Compiling'''
         compiler = mainWindow.compilerInput.get()
         compilationFile = mainWindow.fileInput.get()
-        compilation.doCompilation(compiler, compilationFile)
+        switches = mainWindow.switchInput.get()
+        wd = mainWindow.cwdInput.get()
+        compilation.doCompilation(compiler, compilationFile, switches, wd)
         import classes.successWindow
         classes.successWindow.successWindow.mainloop()
 
@@ -70,11 +74,28 @@ class mainWindow():
     fileLabel.grid(row=3, column=1, padx=4, pady=4)
     fileInput = tk.Entry()
     fileInput.grid(row=3, column=2, padx=4, pady=4)
-    cwdLabel = tk.Label(text = "Choose the working directory")
+    cwdLabel = tk.Label(text = "Choose the working directory:")
     cwdLabel.grid(row=4, column=1, padx=4, pady=4)
     cwdInput = tk.Entry()
     cwdInput.grid(row=4, column=2, padx=4, pady=4)
+    switchLabel = tk.Label(text = "Switches:")
+    switchLabel.grid(row=5, column=1, padx=4, pady=4)
+    switchInput = tk.Entry()
+    switchInput.grid(row=5, column=2, padx=4, pady=4)
     compileButton = tk.Button(text="Compile", command=startCompilation)
     compileButton.grid(row=6, column=1, padx=4, pady=4)
     testButton = tk.Button(text="Test Compiler", command=compilerTest)
     testButton.grid(row=6, column=2, padx=4, pady=4)
+
+
+
+    def forceError():
+        import classes.errorWindow
+        classes.mainWindow.mainWindow.window.destroy()
+        classes.errorWindow.error.mainloop()
+        exit(871)
+
+    
+    #Test button
+    forceError = tk.Button(text="Force Error", command=forceError)
+    forceError.grid(row=7, column = 1)

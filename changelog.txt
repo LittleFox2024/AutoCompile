@@ -11,14 +11,25 @@
 02/14/2025 Autocompile 0.1
  - Issue: Can't get output to a log file
 
-09/18/2025 Autocompile 0.1
+02/18/2025 Autocompile 0.1
  - Started working on main window for the program. So many issues right now...
 
-09/19/2025 Autocompile 0.1
+02/19/2025 Autocompile 0.1
  - Decided to move different parts into their own file. It's a bit of a mess
    right now, but everything seems to line up well
 
-09/20/2025 Autocompile 0.1
+02/20/2025 Autocompile 0.1
  - Finally got it to work with g++ and test.cpp
  - Success and error window will pop up for "Test Compiler" button
  - Will give a success message when finished with compiling
+
+02/26/2025 Autocompile 0.2
+ - Updated icon
+ - *Attempted* to add a picture - didn't work
+
+02/28/2025 Autocompile 0.2
+ - Added in switches and working directory
+ - Tested with g++ and pyinstaller, and works correctly on those.
+
+02/28/2025 Autocompile 1.0
+==First Stable Release==

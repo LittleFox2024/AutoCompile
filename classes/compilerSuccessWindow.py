@@ -10,8 +10,8 @@ import classes.mainWindow
 
 #Set up Window
 def createWindow():
-    compSuccessWindow = tk.Tk()
-    compSuccessWindow.title("Complete!")
+    compSuccessWindow = tk.Tk() #Success Window
+    compSuccessWindow.title("Complete!") #Window title
 
     #Create label based on answer
     if classes.mainWindow.mainWindow.check == 0:

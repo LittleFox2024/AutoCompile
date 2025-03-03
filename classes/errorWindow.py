@@ -11,8 +11,8 @@ from PIL import ImageTk, Image
 '''For main window'''
 
 #Set up Window
-error = tkm.Tk()
-error.title("AutoCompile Error")
+error = tkm.Tk() #Error window
+error.title("AutoCompile Error") #Window title
 
 #Labels
 #The images won't work for whatever reason...

@@ -17,7 +17,7 @@ def doCompilation(compiler, compilationFile, switches="", wd=""):
     This is in charge of the actual compilation.
     '''
     
-    x = checks.compilerCheck(compiler)
+    x = checks.compilerCheck(compiler) #Temp var for error check
     
     #Make sure the compiler exists...
     if x == 1:
@@ -32,10 +32,10 @@ def doCompilation(compiler, compilationFile, switches="", wd=""):
     #     switchList += " "
     
     # #Finally, we can execute it!
-    cmdLine = compiler + " " + switches + " " + compilationFile
+    cmdLine = compiler + " " + switches + " " + compilationFile #Final command
 
     #Make sure to use the right one. Windows used cmd.exe, UNIX is /bin/bash
-    hostOS = checks.osTypeCheck()
+    hostOS = checks.osTypeCheck() #User's OS
     #Execute
     if hostOS == "Windows": os.system("cd " + wd + " &" +  cmdLine)
     elif hostOS == "Linux" or hostOS == "Darwin": os.system("bash cd" \

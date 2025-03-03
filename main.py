@@ -10,14 +10,18 @@ command line without the user ever having to interact with the command line.
 Changelog available in "changelog.txt"
 '''
 
+#Imports
 from classes.mainWindow import mainWindow
 
 try:
+    #Try main window first.
     mainWindow.window.mainloop()
 except:
     try:
+        #If the main window fails, try error window.
         import classes.errorWindow
         classes.errorWindow.error.mainloop()
     finally:
+        #If all else fails, call Administrator.
         print("System Alert: Code 871")
         exit(871)

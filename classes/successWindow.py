@@ -5,6 +5,7 @@ Class for success window.
 #import
 import tkinter as tk
 '''For main window'''
+
 #Set up Window
 successWindow = tk.Tk()
 successWindow.title("AutoCompile")

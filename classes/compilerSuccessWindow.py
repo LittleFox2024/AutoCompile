@@ -12,6 +12,8 @@ import classes.mainWindow
 def createWindow():
     compSuccessWindow = tk.Tk()
     compSuccessWindow.title("Complete!")
+
+    #Create label based on answer
     if classes.mainWindow.mainWindow.check == 0:
         tk.Label(text="Compiler was found. You can use it!", master=compSuccessWindow).\
                                                         grid(row=1, column=1)

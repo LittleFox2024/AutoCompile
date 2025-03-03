@@ -7,6 +7,7 @@ the user has permission to use it, etc.
 import os
 import platform
 
+#Functions
 def osTypeCheck():
     '''Gets the user's OS'''
     hostOS = platform.system()
@@ -42,8 +43,10 @@ def compilerCheck(compiler):
     '''
     Check for compiler
     '''
+    #Check if the full path is valid
     if os.path.exists(compiler): return 0
     else: 
+        #If not, see if it is in $PATH or %PATH%
         x = pathVarCheck(compiler)
         if x == 0: return 0
         else: return 1

@@ -1,7 +1,7 @@
 '''
 Include the mainWindow() class
 '''
-#import
+#Imports
 from tkinter import *
 import tkinter.ttk as tk
 import classes.compilation as compilation
@@ -25,6 +25,7 @@ class mainWindow():
     #Functions
     def createCompilerSuccessWindow():
         '''If compiler is found'''
+        #Create success window
         newWindow = Tk(mainWindow)
         newWindow.title("Success!")
         tk.Label(newWindow, text="Success!").grid(row=1, column=1)
@@ -32,6 +33,8 @@ class mainWindow():
     
     def createCompilerFailWindow():
         '''If compiler is not found'''
+        #Create failure window
+        #I don't think I used this... :)
         newWindow = Tk(mainWindow)
         newWindow.title("Failure")
         tk.Label(newWindow, text="Fail").grid(row=1, column=1)
@@ -39,19 +42,29 @@ class mainWindow():
 
     def startCompilation():
         '''Start Compiling'''
+        #Variables for this
         compiler = mainWindow.compilerInput.get()
         compilationFile = mainWindow.fileInput.get()
         switches = mainWindow.switchInput.get()
         wd = mainWindow.cwdInput.get()
+        
+        #Send the varibles to doCompilation()
         compilation.doCompilation(compiler, compilationFile, switches, wd)
+
+        #Create success window
         import classes.successWindow
         classes.successWindow.successWindow.mainloop()
 
     def compilerTest():
         '''Test Compiler'''
+        #Import success window
         import classes.compilerSuccessWindow
         compiler = mainWindow.compilerInput.get()
+
+        #Check for compiler
         classes.mainWindow.mainWindow.check = checks.compilerCheck(compiler)
+        #Make sure everything is right... ignore commented out options
+        #That is a test.
         if classes.mainWindow.mainWindow.check == 0:
             classes.mainWindow.mainWindow.check = 0
             #classes.mainWindow.mainWindow.createCompilerSuccessWindow()
@@ -90,6 +103,7 @@ class mainWindow():
 
 
     def forceError():
+        '''Force and error message. For testing purposes only.'''
         import classes.errorWindow
         classes.mainWindow.mainWindow.window.destroy()
         classes.errorWindow.error.mainloop()
